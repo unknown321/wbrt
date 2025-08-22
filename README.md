@@ -25,7 +25,7 @@ Run the exe and follow instructions.
 ### Can this tool pull my device out of bootloop?
 
 Yes, if you have made a backup beforehand. Flashing backups from other devices (even same model) is not 
-recommended - your serial number and other factory will be overwritten with no chance of recovery.
+recommended - your serial number and other factory settings will be overwritten with no chance of recovery.
 
 ### Can I restore using backup from another model onto my device?
 
