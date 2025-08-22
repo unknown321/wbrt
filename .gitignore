@@ -1,0 +1,8 @@
+libwdi
+*.msi
+deps/wdk
+*.exe
+DA.bin
+cmake-*
+*.swp
+.idea
