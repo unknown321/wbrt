@@ -20,6 +20,8 @@ Create and restore backups for MT8590-based Walkmans:
 
 Run the exe and follow instructions.
 
+[Video](https://www.youtube.com/watch?v=yDw7vh5G-Ss)
+
 ## FAQ
 
 ### Can this tool pull my device out of bootloop?
