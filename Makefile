@@ -71,5 +71,7 @@ clean:
 		libwdi \
 		*.exe
 
+release: walkman-backup-restore-tool.exe
+
 .DEFAULT_GOAL = run
 .PHONY: deps nsis

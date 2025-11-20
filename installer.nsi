@@ -240,10 +240,10 @@ Section reviewPageLeave
     DetailPrint "2. Hold Play and Volume Down buttons, insert cable"
 
     ${If} $SelectedAction == "1"
-        ExecWait '"$R7" /C "$PLUGINSDIR\flash_tool.exe" -d $PLUGINSDIR\DA.bin -l $backupSize -R -D $destination\walkman_backup.$SafeDateTime.bin'
+        ExecWait '"$R7" /C if 1==1 "$PLUGINSDIR\flash_tool.exe" -d $PLUGINSDIR\DA.bin -l $backupSize -R -D "$destination\walkman_backup.$SafeDateTime.bin"'
     ${Else}
         ; don't use reboot flag here, device won't boot
-        ExecWait '"$R7" /C "$PLUGINSDIR\flash_tool.exe" -d $PLUGINSDIR\DA.bin -l $backupSize -F $destination'
+        ExecWait '"$R7" /C if 1==1 "$PLUGINSDIR\flash_tool.exe" -d $PLUGINSDIR\DA.bin -l $backupSize -F "$destination"'
         DetailPrint "Detach cable, hold power button to turn device on"
     ${EndIf}
     Pop $exitCode
