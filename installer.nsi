@@ -53,7 +53,7 @@ Function .onInit
     InitPluginsDir
     StrCpy $destination ""
     StrCpy $SelectedAction "1"
-    StrCpy $backupSize 1073741824 ; 1GB, 1024*1024*1024
+    StrCpy $backupSize 2465726464 ; 2.29 GB, everything up to /contents, see /proc/dumchar_info
 FunctionEnd
 
 Function actionEnter
