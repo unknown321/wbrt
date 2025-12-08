@@ -238,7 +238,11 @@ Section reviewPageLeave
 
     File "/oname=$PLUGINSDIR\flash_tool.exe" "deps/flash_tool.exe"
     File "/oname=$PLUGINSDIR\DA.bin" "deps/DA.bin"
-    DetailPrint "Saving to $destination\walkman_backup.$SafeDateTime.bin"
+    ${If} $SelectedAction == "1"
+        DetailPrint "Saving to $destination\walkman_backup.$SafeDateTime.bin"
+    ${Else}
+        DetailPrint "Restoring from $destination"
+    ${EndIf}
     DetailPrint ""
     DetailPrint "1. Detach cable and turn the device off"
     DetailPrint "2. Hold Play and Volume Down buttons, insert cable"
