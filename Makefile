@@ -9,7 +9,7 @@ DOCKER=docker run -t --rm \
 LIBWDI_REPO=https://github.com/pbatard/libwdi
 LIBWDI_COMMIT_SHA=30df0c0e051b0132c4b9ebed8c054bc8eb3aaaec
 
-FLASHTOOL_VERSION=v0.1.5
+FLASHTOOL_VERSION=v0.1.6
 FLASHTOOL_URL=https://github.com/unknown321/mediatek_flash_tool/releases/download/$(FLASHTOOL_VERSION)/flash_tool.exe
 DA_URL=https://github.com/bkerler/mtkclient/raw/refs/tags/1.9/mtkclient/Loader/MTK_AllInOne_DA_5.2136.bin
 
