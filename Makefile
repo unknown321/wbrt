@@ -9,7 +9,9 @@ DOCKER=docker run -t --rm \
 LIBWDI_REPO=https://github.com/pbatard/libwdi
 LIBWDI_COMMIT_SHA=30df0c0e051b0132c4b9ebed8c054bc8eb3aaaec
 
-FLASHTOOL_VERSION=v0.1.6
+GIT_VERSION=$(shell git describe --tags --always)
+
+FLASHTOOL_VERSION=v0.1.7
 FLASHTOOL_URL=https://github.com/unknown321/mediatek_flash_tool/releases/download/$(FLASHTOOL_VERSION)/flash_tool.exe
 DA_URL=https://github.com/bkerler/mtkclient/raw/refs/tags/1.9/mtkclient/Loader/MTK_AllInOne_DA_5.2136.bin
 
@@ -54,14 +56,14 @@ deps/DA.bin:
 	wget -O deps/DA.bin $(DA_URL)
 
 nsis:
-	-rm walkman-backup-restore-tool.exe
+	-rm walkman-backup-restore-tool.$(GIT_VERSION).exe
 	$(MAKE) run
 
-walkman-backup-restore-tool.exe: deps libwdi/examples/wdi-simple.exe
+walkman-backup-restore-tool.$(GIT_VERSION).exe: deps libwdi/examples/wdi-simple.exe
 	makensis installer.nsi
 
 run:
-	$(DOCKER) make walkman-backup-restore-tool.exe
+	$(DOCKER) make walkman-backup-restore-tool.$(GIT_VERSION).exe
 
 clean:
 	-rm -rf \
@@ -72,7 +74,7 @@ clean:
 		libwdi \
 		*.exe
 
-release: walkman-backup-restore-tool.exe
+release: walkman-backup-restore-tool.$(GIT_VERSION).exe
 
 .DEFAULT_GOAL = run
-.PHONY: deps nsis
+.PHONY: deps nsis run release clean prepare

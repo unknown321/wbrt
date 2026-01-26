@@ -10,13 +10,18 @@
 ; - open this script with Nullsoft Scriptable Install System
 ; - compile and run
 
+!tempfile GITTAG
+!system 'git describe --tags --always > "${GITTAG}"'
+!define /file GIT_VERSION "${GITTAG}"
+!delfile "${GITTAG}"
+
 ; Use modern interface
   !include MUI2.nsh
   !define MUI_FINISHPAGE_NOAUTOCLOSE
 
 ; General
-  Name                  "Walkman Backup/Restore Tool"
-  OutFile               "walkman-backup-restore-tool.exe"
+  Name                  "Walkman Backup/Restore Tool ${GIT_VERSION}"
+  OutFile               "walkman-backup-restore-tool.${GIT_VERSION}.exe"
   ShowInstDetails       show
   RequestExecutionLevel admin
 
